@@ -1,0 +1,37 @@
+#Install Jenkins "Pipeline Utility Steps"
+    click "manage Jenkins"
+    click "Plugins"
+    click "Available Plugins"
+    search for "Pipeline Utility Steps"
+    select "Pipeline Utility Steps"
+    click install
+
+#Create the Jenkins pipeline:
+    Go to the Jenkins Dashboard
+    Click on “New Item” 
+    Enter a name for your new project
+    Choose "Multibranch Pipeline" 
+    Click "OK".
+    describe build
+    scroll to pipeline
+    click menu arrow and select pipeline script from scm
+    click scm menu arrow and select GitHub
+    enter the url of the repo
+    click add menu to add credentials
+    enter username of gh account at username field
+    enter password (gh token)
+    create gh token (if necessary)
+    check repo, admin:repo_hook (if necessary)
+    click generate token (if necessary)
+    copy token (if necessary)
+    enter token as password
+    enter github as id
+    enter a description
+    click next
+    scroll to branches to build
+    change from master to main
+    Scan Repository Triggers:
+    Set up Jenkins to periodically scan for changes or set up webhooks to trigger scans when changes are pushed every minute
+    click apply 
+    click save
+    click build now
