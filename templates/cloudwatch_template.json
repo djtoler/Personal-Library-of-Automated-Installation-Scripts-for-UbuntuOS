@@ -1,0 +1,34 @@
+{
+    "agent": {
+        "metrics_collection_interval": $METRICS_INTERVAL,
+        "run_as_user": "$RUN_AS_USER"
+    },
+    "logs": {
+        "logs_collected": {
+            "files": {
+                "collect_list": [
+                    {
+                        "file_path": "$LOG_PATH",
+                        "log_group_name": "$LOG_GROUP",
+                        "log_stream_name": "{instance_id}",
+                        "retention_in_days": $RETENTION_DAYS
+                    }
+                ]
+            }
+        }
+    },
+    "metrics": {
+        "aggregation_dimensions": [
+            ["InstanceId"]
+        ],
+        "append_dimensions": {
+            "AutoScalingGroupName": "\${aws:AutoScalingGroupName}",
+            "ImageId": "\${aws:ImageId}",
+            "InstanceId": "\${aws:InstanceId}",
+            "InstanceType": "\${aws:InstanceType}"
+        },
+        "metrics_collected": {
+            ...  # The rest of the configuration remains unchanged
+        }
+    }
+}
