@@ -6,6 +6,7 @@ import csv
 
 # Store the list of process_ids in a variable
 processes = psutil.pids()
+# print(processes)
 
 def current_running_processes():
 
@@ -28,6 +29,7 @@ def current_running_processes():
 
             #Store the collection of data for each process in a variable
             process_id_data = psutil.Process(process)
+            print(process_id_data)
 
             #Store the id, name, path, cpu, memory of each process id in seperate variables
             process_id= process
@@ -40,3 +42,4 @@ def current_running_processes():
             writer.writerow([process_id, process_name, process_path, process_cpu, process_mem])
 
 current_running_processes ()
+
