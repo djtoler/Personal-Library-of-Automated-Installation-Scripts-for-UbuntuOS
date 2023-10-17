@@ -14,33 +14,42 @@ processes = psutil.pids()
 
 def current_running_processes():
 
-    with open (filename, 'w', newline='') as file:
-        # Pass our running_processes.csv file to our csv writer object
-        writer = csv.writer(file)
+    try:
+        with open (filename, 'w', newline='') as file:
+                # Pass our running_processes.csv file to our csv writer object
+                writer = csv.writer(file)
 
-        # Store the column headers in a variable
-        field = [ "process_id", "process_name", "process_path", "process_cpu", "process_memory"]
-        
-        # Write the column names horizontally as headers
-        writer.writerow(field)
+                # Store the column headers in a variable
+                field = [ "process_id", "process_name", "process_path", "process_cpu", "process_memory"]
+                
+                # Write the column names horizontally as headers
+                writer.writerow(field)
 
-        #Loop over the list of process ids
-        for process in processes:
+                #Loop over the list of process ids
+                for process in processes:
 
-            #Store the collection of data for each process in a variable
-            process_id_data = psutil.Process(process)
+                    #Store the collection of data for each process in a variable
+                    process_id_data = psutil.Process(process)
 
-            #Store the id, name, path, cpu, memory of each process id in seperate variables
-            process_id= process
-            process_name= process_id_data.name()
-            process_path= process_id_data.exe()
-            process_cpu= process_id_data.cpu_percent()
-            process_mem= process_id_data.memory_percent()
+                    #Store the id, name, path, cpu, memory of each process id in seperate variables
+                    process_id= process
+                    process_name= process_id_data.name()
+                    process_path= process_id_data.exe()
+                    process_cpu= process_id_data.cpu_percent()
+                    process_mem= process_id_data.memory_percent()
 
-            #Put each process data point in a list and pass it to the writerow method to be wriote into the csv file
-            writer.writerow([process_id, process_name, process_path, process_cpu, process_mem])
+                    #Put each process data point in a list and pass it to the writerow method to be wriote into the csv file
+                    writer.writerow([process_id, process_name, process_path, process_cpu, process_mem])
+
+    except(psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+         return None, None, None, None, None
+         
+
+    
 
 current_running_processes ()
+
+
 
 
 
