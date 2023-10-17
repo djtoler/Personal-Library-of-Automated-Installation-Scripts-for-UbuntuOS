@@ -4,15 +4,15 @@ from datetime import datetime
 import psutil
 import csv
 
+# Store the name of the file in a variable
+current_datetime = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+filename = f"current_running_process_{current_datetime}.csv"
+
 # Store the list of process_ids in a variable
 processes = psutil.pids()
-# print(processes)
+
 
 def current_running_processes():
-
-    # Store the name of the file in a variable
-    current_datetime = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = f"current_running_process_{current_datetime}.csv"
 
     with open (filename, 'w', newline='') as file:
         # Pass our running_processes.csv file to our csv writer object
@@ -29,7 +29,6 @@ def current_running_processes():
 
             #Store the collection of data for each process in a variable
             process_id_data = psutil.Process(process)
-            print(process_id_data)
 
             #Store the id, name, path, cpu, memory of each process id in seperate variables
             process_id= process
@@ -42,4 +41,8 @@ def current_running_processes():
             writer.writerow([process_id, process_name, process_path, process_cpu, process_mem])
 
 current_running_processes ()
+
+
+
+    
 
