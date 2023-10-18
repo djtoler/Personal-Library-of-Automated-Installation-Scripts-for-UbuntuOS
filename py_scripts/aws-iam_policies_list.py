@@ -13,8 +13,8 @@ from datetime import datetime
 import csv
 
 
-#Create and return a IAM bot3 client
-def get_boto_client():
+
+def get_boto_client():                                                #Create and return a IAM bot3 client
     try:
         client = boto3.client('iam')
         return client
@@ -22,8 +22,8 @@ def get_boto_client():
         print(f"Cant create a boto3 client: {e}")
         return None
 
-#Set boto3 IAM client to a variable
-boto_iam_client = get_boto_client()
+
+boto_iam_client = get_boto_client()                                  #Set boto3 IAM client to a variable
 
                                                                    
 def return_iam_policies(client):                                     #Make a function that returns a list of IAM policies 
