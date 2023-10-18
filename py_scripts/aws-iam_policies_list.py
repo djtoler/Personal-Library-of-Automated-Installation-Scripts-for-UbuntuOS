@@ -72,5 +72,5 @@ def current_iam_policies_to_csv():
     else:
         print("Couldnt write policies to CSV: Check error messages.")
 
-# Run the main function
-current_iam_policies_to_csv()
+
+current_iam_policies_to_csv()                                            # Run the main function
