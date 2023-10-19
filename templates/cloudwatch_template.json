@@ -27,8 +27,7 @@
             "InstanceId": "\${aws:InstanceId}",
             "InstanceType": "\${aws:InstanceType}"
         },
-        "metrics_collected": {
-            ...  # The rest of the configuration remains unchanged
+        "metrics_collected": 
         }
     }
 }
