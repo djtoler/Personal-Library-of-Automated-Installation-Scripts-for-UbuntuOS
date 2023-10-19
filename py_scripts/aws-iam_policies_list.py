@@ -35,7 +35,7 @@ def return_iam_policies(client):                                     #Make a fun
         return []
 
                                                                      
-list_of_policies = fetch_iam_policies(boto_client)                    #Set list of returned policies to a variable
+list_of_policies = return_iam_policies(boto_client)                    #Set list of returned policies to a variable
 
 
                                                                       
