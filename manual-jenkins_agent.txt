@@ -1,0 +1,19 @@
+Select "Build Executor Status"
+Click "New Node"
+Choose a node name that will coorespond with the Jenkins agent defined in our Jenkins file
+Select permenant Agent
+Create the node
+Use the same name for the name field
+Enter "/home/ubuntu/agent1" as the "Remote root directory"
+Use the same name for the labels field
+Click dropdown menu and select "only build jobs with label expressions matrching this node"
+Click dropdown menu and select "launch agent via SSH"
+Enter the public IP address of the instance you want to install the agent on, in the "Host" field
+Click "Add" to add Jenkins credentials
+Click dropdown menu and select "select SSH username with private key"
+Use the same name for the ID field 
+Use "ubuntu" for the username
+Enter directly & add private key by pasting it into the box
+Click "Add" and select the ubuntu credentials
+Click dropdown menu and select "snon verifying verification strategy"
+Click save & check in Jenkins UI for a successful installation by clicking "Log"
