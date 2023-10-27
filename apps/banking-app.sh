@@ -1,7 +1,7 @@
 #!/bin/bash
 
 touch test1.txt
-cd /home/ubuntu
+
 touch test.txt
 python3.7 -m venv test
 pip install gunicorn
