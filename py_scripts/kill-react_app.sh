@@ -8,4 +8,5 @@ if [[ -n $PID ]]
 then
     echo $PID > pid.txt
     kill -9 $PID
+    echo "killed react app"
 fi
