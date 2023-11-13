@@ -10,7 +10,7 @@ sudo ./aws/install
 mkdir -p ~/.aws
 
 # Download test file
-curl -O https://dp5-auto1.s3.amazonaws.com/cat.txt
+
 
 # Download config file from s3 bucket & replace 
 curl https://dp5-auto1.s3.amazonaws.com/config.txt -o config
