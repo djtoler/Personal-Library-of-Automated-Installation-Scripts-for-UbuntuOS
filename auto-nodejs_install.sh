@@ -8,5 +8,5 @@
 #Install Node Version Manager(NVM)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 source ~/.bashrc
-nvm install 10
+nvm install 15
 nvm use 10
