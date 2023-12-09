@@ -24,6 +24,9 @@ Restart=always
 [Install]
 WantedBy=multi-user.target" | sudo tee $SERVICE_FILE
 
+# Change the password or authorization method
+sed -i 's/auth: password/auth: none/' /home/ubuntu/.config/code-server/config.yaml
+
 # Reload the systemd manager configuration
 sudo systemctl daemon-reload
 
