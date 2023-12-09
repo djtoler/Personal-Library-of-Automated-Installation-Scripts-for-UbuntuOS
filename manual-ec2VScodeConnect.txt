@@ -1,0 +1,11 @@
+Ctrl+Shift+X
+Remote - SSH" and install 
+Confirm SSH key location & permissions
+Ctrl+Shift+p
+Remote-SSH: Connect to Host
+
+Copy & pastes this....
+Host EC2Instance
+  HostName ec2-44-201-222-24.compute-1.amazonaws.com
+  User ubuntu
+  IdentityFile C:/Users/dwayn/Downloads/vscode_key.pem
