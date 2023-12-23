@@ -18,7 +18,7 @@ sudo systemctl start jenkins
 
 # Get Jenkins unlock key
 echo "Jenkins Unlock Key:"
-sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword >> jenkinspw.txt
 
 # Update packages
 sudo apt update -y
