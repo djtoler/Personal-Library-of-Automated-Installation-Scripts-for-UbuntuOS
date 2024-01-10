@@ -26,7 +26,7 @@ After=nginx.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/code-server --bind-addr 0.0.0.0:8080
+ExecStart=/usr/bin/code-server --bind-addr 0.0.0.0:8081
 User=ubuntu
 WorkingDirectory=/home/ubuntu/
 Restart=always
