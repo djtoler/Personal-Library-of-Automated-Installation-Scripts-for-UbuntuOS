@@ -14,9 +14,7 @@ sudo rm /etc/systemd/system/code-server.service
 sudo systemctl daemon-reload
 sudo systemctl reset-failed
 
-# Uninstall code-server
-# The command depends on how code-server was installed.
-# Here it assumes that code-server was installed via apt. Adjust if necessary.
+# Uninstall code server
 sudo apt-get remove code-server -y
 
 # Remove configuration files and directories
