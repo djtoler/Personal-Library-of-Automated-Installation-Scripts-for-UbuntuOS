@@ -1,11 +1,12 @@
+
+
 ### _Terraform_
+<p align="center"><img src="https://github.com/djtoler/dp3-1/blob/main/assets/Screenshot%202023-09-23%20at%208.58.35%20AM.png" width="75%"></p>
+
 - ##### _How to download Terraform on Ubuntu_
 
 ### _Jenkins_
 - ##### _How to download Jenkins on Ubuntu_
-
-### _Jenkins Pipelines_
-- ##### _How to download Jenkins Pipelines on Ubuntu_
   
 ### _AWS CLI_
 - ##### _How to download AWS CLI on Ubuntu_
