@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  
+spec:
+  
+  selector:
+    matchLabels:
+      app: demop
+  template:
+    metadata:
+      labels:
+        app: demop
+    spec:
+      containers:
+      - name: demop
+        
+        ports:
+        - containerPort: 80
