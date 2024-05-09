@@ -10,9 +10,6 @@ WORKDIR /usr/share/nginx/html
 # Clone GitHub repository into a temporary directory
 
 
-# Make sure the script is executable
-RUN chmod +x /usr/local/bin/test.sh
-
 # Expose port 80 for the nginx server
 
 
