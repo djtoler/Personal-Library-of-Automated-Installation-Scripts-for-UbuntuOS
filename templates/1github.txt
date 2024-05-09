@@ -1,0 +1,7 @@
+##Part 1 - GITHUB
+
+Start off by looking at out github repo. Github is a repository where we can store differnt versions of our code and developers can work on the same code in a shared space.
+
+APPLICATION CODE
+
+HTML file will be our demo application 
