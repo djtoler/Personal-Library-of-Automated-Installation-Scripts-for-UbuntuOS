@@ -1,0 +1,13 @@
+##Part4 (Load Balancer)
+
+Now that we have our container up and running in digtal ocean, we can create another virtual machine and run our container with a load balancer. 
+
+    doctl compute droplet create dk100 --size s-1vcpu-1gb --image docker-20-04 --region nyc1 --ssh-keys 41966894 --tag-names hwthdemo --wait
+
+    https://raw.githubusercontent.com/djtoler/Personal-Library-of-Automated-Installation-Scripts-for-UbuntuOS/main/auto-container.sh
+
+    
+
+This will allow us to control where the traffic to our website goes. 
+
+So for example, if we want to test to see which design keeps users on our app longer, we can use a load balancer to randomly split the traffic between our 2 versions. 

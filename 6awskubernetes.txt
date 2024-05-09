@@ -1,0 +1,26 @@
+##Part6 (Kubernetes)
+So now lets say we've been using a load balancer to find test different things and we've found out exactly what our users want and now our application is getting a million users per day.
+
+At that point Kubernetes comes in. 
+
+Kubernetes is a container orchistration tool that apps like Reddit, AirBnB,, Tesla and eBay use. 
+
+One of the main features Kubernets has is auto-scaling. Auto-scaling gives us the flexibility to scale our number of servers up when our application traffic increases and scale the number of servers down when our application traffic decreases.
+
+So lets say we have a food delivery app we'll have huge traffic spikes during lunch time and dinner time. 
+
+So for most of they day, we might only need 2 server to run our app. But during dinner hours, we might need to scale up to 10 servers.
+
+With Kubernetes, we can set a minimum of 2 servers and maximum of 10 servers for our application. 
+
+This way, Kubernetes will automatically increase the number of servers we based on how much traffic were getting. 
+
+So during dinner, Kubernetes might scale us up to 9 or 10 servers but at 4am when not a lot of people are ordering food, Kubernetes would have us scaled down to only 2 servers.
+
+
+
+curl -O https://raw.githubusercontent.com/djtoler/Personal-Library-of-Automated-Installation-Scripts-for-UbuntuOS/main/demo.yaml
+
+name: demo-app
+replicas: 2
+image: djtoler/hwthdemoapp2:latest
