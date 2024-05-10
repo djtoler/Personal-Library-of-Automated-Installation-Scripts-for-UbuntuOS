@@ -1,0 +1,113 @@
+##Part 1 - GITHUB
+
+Start off by looking at out github repo. 
+
+Github is a repository where we can store differnt versions of our code and developers can work on the same code in a shared space.
+
+APPLICATION CODE
+
+HTML file will be our demo application 
+
+
+##Part2 (Docker on AWS)
+
+INSTALL DOCKER
+
+    Now that we have our code stored on GitHub, we can containerize our app using Docker. 
+
+    SO in our IDE, the first thing we can do is install Docker so that we can build our container and push it to DockerHub. 
+
+    DockerHub is fundemntally the same as GitHub but instead of storing code, we store containers images. 
+
+    So a container is like a ready to use, out-of-the-box version of our application code and everythinig our application needs to run. 
+
+    So a container image is a file that lists where to get our application code from and whatever else we need for our application to run.
+
+    I go to the raw file and copy the link.
+
+    I download it onto my server and run it so that Docker can install. 
+
+CREATE DOCKER FILE (Build the TV dinner recipe list)
+
+    Then we create our Dockerfile. I'll download and install that the same way
+
+BUILD DOCKER IMAGE (Cook the TV dinner from the recipe and package it)
+
+    We'll login to DockerHub with a username and a token
+
+    We run docker login and enter our username
+
+    Then generate a token from DockerHub for our password
+
+    Then we'll build our image and push it to DockerHub
+
+    Then go to DockerHub check and make sure its stored 
+
+RUN DOCKER CONTAINER FROM IMAGE (Microwave the TV dinner and serve it)
+
+
+##Part3 (Docker on Digital Ocean)
+
+So to run our container on digital ocean we'll make a virtual machine, download our same container image from DockerHub, run it and see why this whole container concept is important.
+
+So the first thing we do is create a key, which is like a access code for our Virtual machine.
+
+Then we'll add our key to digital ocean
+
+Then will create our digital ocean virtual machine
+
+Then attach a firewall to make sure port 80 is open
+
+Next, well connect to our virtual machine and make sure docker is installed and then login to docker
+
+Now instead of having to build and push our docker image like we did before, we can just pull it it from DockerHub now since its already stored there.
+
+Then we can run our same container from digital ocean the same way we did on AWS
+
+##Part4 (Load Balancer)
+
+Now that we have our container up and running in digtal ocean, we can create another virtual machine and run our container with a load balancer. 
+
+This will allow us to control where the traffic to our website goes. 
+
+So for example, if we want to test to see which design keeps users on our app longer, we can use a load balancer to randomly split the traffic between our 2 versions. 
+
+##Part5 (Jenkins)
+So we explained earlier that Jenkins is a tool to help us automate the delivery of our application updates. 
+
+Jenkinsfile is a file where we define the stages in our CICD pipeline that our code will pass through before going into production and being made available to our users. In our demo here we have 2 stages. 
+
+First stage, we have "Pull latest code from GitHub" and this git command will pull our most recently updated code version. 
+
+Second stage, we have "Check background color". 
+
+This will check our appliction to make sure we dont ever push a version of our application out to our users that has a red background. 
+
+If the background is set to the red color, our pipeline will fail and it wont push this new version of our app out to our users
+
+We can make as many stages as we want and we can do whatever we want in those stages. 
+
+So we might have a development enviornment where we build new features for our app. 
+
+So lets say we add a new sign up form on our app, we can add a stage that generates a random name and email address to sign up on our app and checks the database to validate that all names and emails are getting saved.
+
+
+##Part6 (Kubernetes)
+So now lets say we've been using a load balancer to find test different things and we've found out exactly what our users want and now our application is getting a million users per day.
+
+At that point Kubernetes comes in. 
+
+Kubernetes is a container orchistration tool that apps like Reddit, AirBnB,, Tesla and eBay use. 
+
+One of the main features Kubernets has is auto-scaling. Auto-scaling gives us the flexibility to scale our number of servers up when our application traffic increases and scale the number of servers down when our application traffic decreases.
+
+So lets say we have a food delivery app we'll have huge traffic spikes during lunch time and dinner time. 
+
+So for most of they day, we might only need 2 server to run our app. But during dinner hours, we might need to scale up to 10 servers.
+
+With Kubernetes, we can set a minimum of 2 servers and maximum of 10 servers for our application. 
+
+This way, Kubernetes will automatically increase the number of servers we based on how much traffic were getting. 
+
+So during dinner, Kubernetes might scale us up to 9 or 10 servers but at 4am when not a lot of people are ordering food, Kubernetes would have us scaled down to only 2 servers.
+
