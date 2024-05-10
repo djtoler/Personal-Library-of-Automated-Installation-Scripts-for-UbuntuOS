@@ -1,5 +1,5 @@
 #!/bin/bash
 
 docker login
-docker pull djtoler/demoapp100:latest
-docker run -d -p 80:80 djtoler/demoapp100:latest
+docker pull djtoler/dk8000:latest
+docker run -d -p 80:80 djtoler/dk8000:latest
