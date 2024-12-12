@@ -35,8 +35,8 @@ Restart=always
 WantedBy=multi-user.target" | sudo tee $SERVICE_FILE
 
 # Run this to change authorization method to none OR run the command under it to change the password
-sed -i 's/auth:/auth: none/' /home/ubuntu/.config/code-server/config.yaml
-#sed -i "s/password:.*/password: $PASSWORD/" /home/ubuntu/.config/code-server/config.yaml
+# sed -i 's/auth:/auth: none/' /home/ubuntu/.config/code-server/config.yaml
+sed -i "s/password:.*/password: $PASSWORD/" /home/ubuntu/.config/code-server/config.yaml
 
 # Reload the systemd manager configuration
 sudo systemctl daemon-reload
