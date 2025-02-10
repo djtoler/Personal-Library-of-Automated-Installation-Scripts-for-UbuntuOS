@@ -1,25 +1,26 @@
-
 #!/bin/bash
 
-# Stop the code-server service
+echo "Stopping and disabling code-server service..."
 sudo systemctl stop code-server
-
-# Disable the code-server service
 sudo systemctl disable code-server
 
-# Remove the service file if it exists
-sudo rm /etc/systemd/system/code-server.service
+echo "Removing systemd service file..."
+sudo rm -f /etc/systemd/system/code-server.service
 
-# Reload systemd and reset any failed services
+echo "Reloading systemd daemon..."
 sudo systemctl daemon-reload
 sudo systemctl reset-failed
 
-# Uninstall code server
-sudo apt-get remove code-server -y
+echo "Removing code-server binary..."
+sudo rm -rf /usr/lib/code-server
+sudo rm -f /usr/bin/code-server
 
-# Remove configuration files and directories
+echo "Removing configuration and user data..."
 rm -rf ~/.config/code-server
 rm -rf ~/.local/share/code-server
+rm -rf ~/.cache/code-server
 
-# Echo a completion message
-echo "code-server has been uninstalled."
+echo "Removing code-server logs..."
+sudo rm -rf /var/log/code-server
+
+echo "Uninstallation complete."
